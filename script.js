@@ -109,7 +109,11 @@ function draw() {
         GAME.canvasContext.fillText(`He need your help.`, 410, 240);
         
         //рисуем текст 
-        GAME.canvasContext.fillText(`Can you help him?`, 406, 280); 
+        GAME.canvasContext.fillText(`Can you help him?`, 406, 280);
+        
+        //рисуем текст 
+        GAME.canvasContext.fillStyle = "black";
+        GAME.canvasContext.fillText(`Press SPACE BAR to start.`, 370, 530); 
     }
 
     //игра
@@ -170,6 +174,13 @@ function draw() {
             GAME.canvasContext.bezierCurveTo(942.5, 12.5, 937.5, 18.5, 937.5, 20);
             GAME.canvasContext.fill();                                               
         }
+
+        //рисуем текст 
+        if (!GAME.end) {
+            GAME.canvasContext.font = "20px Arial"; 
+            GAME.canvasContext.fillStyle = "white";
+            GAME.canvasContext.fillText(`Press UP ARROW to jump.`, 360, 530);
+        }
     }
     
     //если выиграли, рисуем заставку
@@ -188,7 +199,10 @@ function draw() {
         
         //рисуем текст 
         GAME.canvasContext.font = "20px Arial";
-        GAME.canvasContext.fillText(`The dinosaur has returned home.`, 355, 230);  
+        GAME.canvasContext.fillText(`The dinosaur has returned home.`, 355, 230);
+        
+        //рисуем текст 
+        GAME.canvasContext.fillText(`Press SPACE BAR to restart.`, 355, 530); 
     }
 
     //если проиграли, выводим окошко со счетом
@@ -204,7 +218,10 @@ function draw() {
         
         //рисуем текст 
         GAME.canvasContext.font = "20px Arial";
-        GAME.canvasContext.fillText(`Your score ${GAME.score}.`, 440, 230);  
+        GAME.canvasContext.fillText(`Your score ${GAME.score}.`, 440, 230);
+        
+        //рисуем текст 
+        GAME.canvasContext.fillText(`Press SPACE BAR to restart.`, 355, 530); 
     }
 }
 
