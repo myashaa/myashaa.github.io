@@ -60,6 +60,7 @@ function _initCanvas(canvas) {
 
 function _initEventsListeners(canvas) {
     document.addEventListener("keydown", _onDocumentKeyDown);
+    document.addEventListener("touchstart", _onDocumentTouch);
 }
 
 function _onDocumentKeyDown(event) {
@@ -75,6 +76,23 @@ function _onDocumentKeyDown(event) {
 
     //конец игры при нажатии пробела
     if (event.code == 'Space' && GAME.end) {
+        location.reload();
+    }
+}
+
+function _onDocumentTouch(event) {
+    //прыжок при нажатии
+    if (DINO.y == 370) {
+        DINO.moveUp = true;
+    }
+
+    //начало игры при нажатии
+    if (!GAME.end) {
+        GAME.start = true;
+    }
+
+    //конец игры при нажатии
+    if (GAME.end) {
         location.reload();
     }
 }
